@@ -1,5 +1,5 @@
 %define	name	gnomad2
-%define	version	2.8.10
+%define	version	2.8.12
 %define rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	A Nomad Jukebox manager
@@ -11,7 +11,7 @@ Release:	%{release}
 License:	GPL
 URL:		http://gnomad2.sourceforge.net/
 Group:		Sound
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.gz
 BuildRequires:	libnjb-devel >= 2.2 
 BuildRequires:	libgtk+2-devel
 BuildRequires:	libid3tag-devel
