@@ -1,6 +1,6 @@
 %define	name	gnomad2
 %define	version	2.8.12
-%define rel	1
+%define rel	2
 %define	release	%mkrel %{rel}
 %define	Summary	A Nomad Jukebox manager
 
@@ -43,16 +43,10 @@ convert -size 16x16 %{name}-logo.png $RPM_BUILD_ROOT%{_miconsdir}/%{name}-logo.p
 convert -size 32x32 %{name}-logo.png $RPM_BUILD_ROOT%{_iconsdir}/%{name}-logo.png
 convert -size 48x48 %{name}-logo.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}-logo.png
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{name}" icon="%{name}-logo.png" needs="x11" title="Gnomad 2" longtitle="A tool for managing Creative Nomad/Zen Jukeboxes and Dell DJs" section="Multimedia/Sound" xdg="true"
-EOF
-
-
 %find_lang %{name}
 desktop-file-install --vendor="" \
     --remove-category="Application" \
-    --add-category="X-MandrivaLinux-Multimedia-Sound;AudioVideo;Audio" \
+    --add-category="AudioVideo;Audio" \
     --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 	  
 %post
@@ -75,7 +69,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_miconsdir}/%{name}-logo.png
 %{_iconsdir}/%{name}-logo.png
 %{_liconsdir}/%{name}-logo.png
-%{_menudir}/%{name}
 %doc AUTHORS NEWS ChangeLog README TODO
-
-
