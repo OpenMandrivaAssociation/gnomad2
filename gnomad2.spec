@@ -1,6 +1,6 @@
 %define	name	gnomad2
-%define	version	2.8.12
-%define rel	2
+%define	version	2.9.0
+%define rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	A Nomad Jukebox manager
 
@@ -11,7 +11,7 @@ Release:	%{release}
 License:	GPL
 URL:		http://gnomad2.sourceforge.net/
 Group:		Sound
-Source0:	%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.bz2
 BuildRequires:	libnjb-devel >= 2.2 
 BuildRequires:	libgtk+2-devel
 BuildRequires:	libid3tag-devel
@@ -19,6 +19,7 @@ BuildRequires:	ImageMagick
 BuildRequires:  perl-XML-Parser
 BuildRequires:  desktop-file-utils
 BuildRequires:  libmtp-devel
+BuildRequires:  taglib-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -42,6 +43,8 @@ install -d $RPM_BUILD_ROOT{%{_miconsdir},%{_liconsdir},%{_menudir}}
 convert -size 16x16 %{name}-logo.png $RPM_BUILD_ROOT%{_miconsdir}/%{name}-logo.png
 convert -size 32x32 %{name}-logo.png $RPM_BUILD_ROOT%{_iconsdir}/%{name}-logo.png
 convert -size 48x48 %{name}-logo.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}-logo.png
+
+perl -pi -e 's,%{name}-logo.png,%{name}-logo,g' %{buildroot}%{_datadir}/applications/*
 
 %find_lang %{name}
 desktop-file-install --vendor="" \
