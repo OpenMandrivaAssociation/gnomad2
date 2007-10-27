@@ -1,6 +1,6 @@
 %define	name	gnomad2
 %define	version	2.9.0
-%define rel	1
+%define rel	2
 %define	release	%mkrel %{rel}
 %define	Summary	A Nomad Jukebox manager
 
