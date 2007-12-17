@@ -20,7 +20,6 @@ BuildRequires:  perl-XML-Parser
 BuildRequires:  desktop-file-utils
 BuildRequires:  libmtp-devel
 BuildRequires:  taglib-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Gnomad 2 is a GUI built on top of GTK/GNOME 2, libid3tag and libnjb that
