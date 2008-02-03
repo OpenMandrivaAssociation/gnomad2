@@ -1,6 +1,6 @@
 %define	name	gnomad2
-%define	version	2.9.0
-%define rel	2
+%define	version	2.9.1
+%define rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	A Nomad Jukebox manager
 
@@ -20,6 +20,8 @@ BuildRequires:  perl-XML-Parser
 BuildRequires:  desktop-file-utils
 BuildRequires:  libmtp-devel
 BuildRequires:  taglib-devel
+BuildRequires:	hal-devel
+BuildRequires:	dbus-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
