@@ -16,7 +16,7 @@ Source0:	%{name}-%{version}.tar.gz
 BuildRequires:	libnjb-devel >= 2.2 
 BuildRequires:	libgtk+2-devel
 BuildRequires:	libid3tag-devel
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:  perl-XML-Parser
 BuildRequires:  desktop-file-utils
 BuildRequires:  libmtp-devel >= 0.3.0
