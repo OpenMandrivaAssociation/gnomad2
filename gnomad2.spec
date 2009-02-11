@@ -23,6 +23,7 @@ BuildRequires:  libmtp-devel >= 0.3.0
 BuildRequires:  taglib-devel
 BuildRequires:	hal-devel
 BuildRequires:	dbus-devel
+BuildRequires:	intltool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -40,13 +41,13 @@ an ordinary graphical FTP program.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %{makeinstall_std}
 
-install -d $RPM_BUILD_ROOT{%{_miconsdir},%{_liconsdir},%{_menudir}}
-convert -size 16x16 %{name}-logo.png $RPM_BUILD_ROOT%{_miconsdir}/%{name}-logo.png
-convert -size 32x32 %{name}-logo.png $RPM_BUILD_ROOT%{_iconsdir}/%{name}-logo.png
-convert -size 48x48 %{name}-logo.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}-logo.png
+install -d %{buildroot}{%{_miconsdir},%{_liconsdir},%{_menudir}}
+convert -size 16x16 %{name}-logo.png %{buildroot}%{_miconsdir}/%{name}-logo.png
+convert -size 32x32 %{name}-logo.png %{buildroot}%{_iconsdir}/%{name}-logo.png
+convert -size 48x48 %{name}-logo.png %{buildroot}%{_liconsdir}/%{name}-logo.png
 
 perl -pi -e 's,%{name}-logo.png,%{name}-logo,g' %{buildroot}%{_datadir}/applications/*
 
@@ -54,7 +55,7 @@ perl -pi -e 's,%{name}-logo.png,%{name}-logo,g' %{buildroot}%{_datadir}/applicat
 desktop-file-install --vendor="" \
     --remove-category="Application" \
     --add-category="AudioVideo;Audio" \
-    --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+    --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 	  
 %if %mdkversion < 200900
 %post
@@ -67,7 +68,7 @@ desktop-file-install --vendor="" \
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(755,root,root,755)
