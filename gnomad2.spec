@@ -1,5 +1,5 @@
 %define	name	gnomad2
-%define	version	2.9.2
+%define	version	2.9.4
 %define rel	1
 %define	release	%mkrel %{rel}
 %define	Summary	A Nomad Jukebox manager
@@ -12,7 +12,7 @@ License:	GPLv2+
 URL:		http://gnomad2.sourceforge.net/
 Group:		Sound
 Source0:	%{name}-%{version}.tar.gz
-#Patch0:		gnomad2-2.9.1-libmtp-0.3-build-fix.patch
+Patch0:		%{name}-0.9.4-fix-str-fmt.patch
 BuildRequires:	libnjb-devel >= 2.2 
 BuildRequires:	libgtk+2-devel
 BuildRequires:	libid3tag-devel
@@ -33,7 +33,7 @@ an ordinary graphical FTP program.
 
 %prep
 %setup -q
-#%patch0 -p0
+%patch0
 
 %build
 %configure2_5x
