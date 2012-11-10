@@ -1,0 +1,20 @@
+--- src/util.c.orig	2007-04-13 23:36:29.000000000 +0200
++++ src/util.c	2009-02-11 22:01:39.000000000 +0100
+@@ -214,7 +214,7 @@
+ 				   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+ 				   GTK_MESSAGE_ERROR,
+ 				   GTK_BUTTONS_CLOSE,
+-				   errorstring);
++				   "%s", errorstring);
+   g_signal_connect_object(GTK_OBJECT(dialog),
+ 			  "delete_event",
+ 			  G_CALLBACK(gtk_widget_destroy),
+@@ -246,7 +246,7 @@
+ 				   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+ 				   GTK_MESSAGE_QUESTION,
+ 				   GTK_BUTTONS_YES_NO,
+-				   confirmstring);
++				   "%s", confirmstring);
+   i = gtk_dialog_run(GTK_DIALOG(dialog));
+   gtk_widget_destroy(dialog);
+   if (i == GTK_RESPONSE_YES) {
