@@ -1,7 +1,7 @@
 Summary:	A Nomad Jukebox manager
 Name:		gnomad2
 Version:	2.9.6
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Sound
 URL:		http://gnomad2.sourceforge.net/
