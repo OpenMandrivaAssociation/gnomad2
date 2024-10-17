@@ -4,7 +4,7 @@ Version:	2.9.6
 Release:	3
 License:	GPLv2+
 Group:		Sound
-URL:		http://gnomad2.sourceforge.net/
+URL:		https://gnomad2.sourceforge.net/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-0.9.4-fix-str-fmt.patch
 BuildRequires:	desktop-file-utils
