@@ -7,6 +7,11 @@ Group:		Sound
 URL:		https://gnomad2.sourceforge.net/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-0.9.4-fix-str-fmt.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	imagemagick
